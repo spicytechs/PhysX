@@ -61,8 +61,8 @@ DUSERNAME=$2
 DREPOSITORY=$3
 DVOLUME=$4
 
-cd ${DVOLUME} 
-ls 
+ 
+ls ${DVOLUME}
 echo "DVOLUME:'${DVOLUME}'"
 
 CONTAINER_NAME=physx_container
