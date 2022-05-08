@@ -50,9 +50,9 @@ DOCKER_RUN()
   docker run \
     --rm \
     --name ${CONTAINER_NAME} \
-    --workdir /home \
     -i ${IMAGE_NAME} \
     ${TOBEEXECUTED}
+    
 }
 
 
