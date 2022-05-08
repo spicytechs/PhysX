@@ -29,7 +29,9 @@ DOCKER_IMAGES()
 
 DOCKER_CP() 
 {
-  docker cp ${DVOLUME}/LICENSE.md ${CONTAINER_NAME}:/home
+  CONTAINER_ID=$(docker create $IMAGE_NAME)
+  docker cp ${DVOLUME}/LICENSE.md ${CONTAINER_ID}:/home
+  docker rm -v $CONTAINER_ID
 }
 
 
