@@ -29,7 +29,7 @@ DOCKER_IMAGES()
 
 DOCKER_CP() 
 {
-  docker cp ${DVOLUME}/physx ${CONTAINER_NAME}:/home/
+  docker cp ${DVOLUME}/LICENSE.md ${CONTAINER_NAME}:/home
 }
 
 
