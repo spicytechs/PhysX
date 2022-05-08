@@ -27,5 +27,5 @@ jobs:
 
       run: | 
         cd Actions
-        bash workflow.sh
+        bash workflow.sh $DPASSWORD $DUSERNAME $DREPOSITORY 
         
