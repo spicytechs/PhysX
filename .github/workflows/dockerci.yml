@@ -1,0 +1,23 @@
+name: Docker CI
+
+on: [push, workflow_dispatch]
+
+jobs:
+
+  build:
+  
+    runs-on: ubuntu-20.04
+      
+    steps:
+    
+    - name: Dowloading repository ... 
+      uses: actions/checkout@v2
+      
+    
+    - name: Executing Docker ...  
+      if: success()
+              
+      run: | 
+        cd Actions
+        bash workflow.sh
+        
