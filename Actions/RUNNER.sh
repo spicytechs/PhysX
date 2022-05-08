@@ -26,7 +26,10 @@ make -j install
 
 ls
 
+pwd
 cd $ROOT
+pwd
+
 
 install/linux/PhysX/*
 
