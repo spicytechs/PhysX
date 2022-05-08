@@ -16,7 +16,15 @@ jobs:
     
     - name: Executing Docker ...  
       if: success()
-              
+
+      env:
+        ## SEE : 
+        ##      https://hub.docker.com/repository/docker/${DUSERNAME}/${DREPOSITORY}
+        ## 
+        DPASSWORD: ${{ secrets.DOCKER_HUB_TOKEN }}         # https://hub.docker.com/settings/security >> Access Tokens 
+        DUSERNAME: ${{ secrets.DOCKER_HUB_USERNAME }}      # 
+        DREPOSITORY: ${{ secrets.DOCKER_HUB_REPOSITORY }}  # 
+
       run: | 
         cd Actions
         bash workflow.sh
