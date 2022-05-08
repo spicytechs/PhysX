@@ -27,7 +27,14 @@ DOCKER_IMAGES()
 }
 
 
-DOCKER_RUN()
+DOCKER_CP() 
+{
+  docker cp \
+   ./* ${CONTAINER_NAME}/home/PHYSX
+}
+
+
+DOCKER_RUN_VOLUME()
 {
   docker run \
     --rm \
@@ -39,20 +46,33 @@ DOCKER_RUN()
 }
 
 
+DOCKER_RUN()
+{
+  docker run \
+    --rm \
+    --name ${CONTAINER_NAME} \
+    --workdir /home/PHYSX \
+    -i ${IMAGE_NAME} \
+    ${TOBEEXECUTED}
+}
+
+
 DPASSWORD=$1
 DUSERNAME=$2
 DREPOSITORY=$3
 DVOLUME=$4
 
+ls 
 echo "DVOLUME:'${DVOLUME}'"
 
-
-CONTAINER_NAME=nvcc_container
+CONTAINER_NAME=physx_container
 IMAGE_NAME=${DUSERNAME}/${DREPOSITORY}:$(date +%s)
 
 DOCKER_LOGIN
 
 DOCKER_BUILD 
+
+DOCKER_CP 
 
 TOBEEXECUTED="ls -la"
 DOCKER_RUN
