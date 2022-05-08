@@ -29,7 +29,7 @@ DOCKER_IMAGES()
 
 DOCKER_CP() 
 {
-  docker cp ./* ${CONTAINER_NAME}/home/PHYSX
+  docker cp ./physx ${CONTAINER_NAME}:/home/
 }
 
 
@@ -50,7 +50,7 @@ DOCKER_RUN()
   docker run \
     --rm \
     --name ${CONTAINER_NAME} \
-    --workdir /home/PHYSX \
+    --workdir /home/physx \
     -i ${IMAGE_NAME} \
     ${TOBEEXECUTED}
 }
@@ -61,6 +61,7 @@ DUSERNAME=$2
 DREPOSITORY=$3
 DVOLUME=$4
 
+cd ${DVOLUME} 
 ls 
 echo "DVOLUME:'${DVOLUME}'"
 
@@ -74,10 +75,10 @@ DOCKER_BUILD
 DOCKER_CP 
 
 TOBEEXECUTED="ls -la"
-DOCKER_RUN
+#DOCKER_RUN
 
 TOBEEXECUTED="pwd"
-DOCKER_RUN
+#DOCKER_RUN
 
 TOBEEXECUTED="bash Actions/RUNNER.sh"
 #DOCKER_RUN
