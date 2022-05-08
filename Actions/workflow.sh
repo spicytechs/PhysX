@@ -50,9 +50,9 @@ DOCKER_RUN()
   docker run \
     --rm \
     --name ${CONTAINER_NAME} \
+    --workdir /home \
     -i ${IMAGE_NAME} \
     ${TOBEEXECUTED}
-    
 }
 
 
@@ -73,12 +73,15 @@ DOCKER_LOGIN
 DOCKER_BUILD 
 
 
-
+echo "LS"
 TOBEEXECUTED="ls -la"
 DOCKER_RUN
 
+
 TOBEEXECUTED="pwd"
 DOCKER_RUN
+echo "LS"
+
 
 #DOCKER_CP 
 
