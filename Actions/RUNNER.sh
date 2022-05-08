@@ -33,6 +33,6 @@ pwd
 cd /home/physx
 ls 
 
-install/linux/PhysX/*
+ls install/linux/PhysX/*
 
 ## 
