@@ -32,7 +32,7 @@ DOCKER_RUN()
   docker run \
     --rm \
     --name ${CONTAINER_NAME} \
-    --volume ${PWD}:/home \
+    --volume ${DVOLUME}:/home \
     --workdir /home \
     -i ${IMAGE_NAME} \
     ${TOBEEXECUTED}
@@ -42,9 +42,9 @@ DOCKER_RUN()
 DPASSWORD=$1
 DUSERNAME=$2
 DREPOSITORY=$3
+DVOLUME=$4
 
 CONTAINER_NAME=nvcc_container
-#IMAGE_NAME=nvcc_image 
 IMAGE_NAME=${DUSERNAME}/${DREPOSITORY}:$(date +%s)
 
 DOCKER_LOGIN
