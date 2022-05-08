@@ -60,7 +60,7 @@ DOCKER_RUN
 TOBEEXECUTED="bash Actions/RUNNER.sh"
 DOCKER_RUN
 
-#DOCKER_PUSH
+DOCKER_PUSH
 
 #
 # docker run --rm --name nvcc_container --volume ${PWD}:/home --workdir /home -i nvcc_image bash GET_NVCC.sh
