@@ -29,8 +29,7 @@ DOCKER_IMAGES()
 
 DOCKER_CP() 
 {
-  docker cp \
-   ./* ${CONTAINER_NAME}/home/PHYSX
+  docker cp ./* ${CONTAINER_NAME}/home/PHYSX
 }
 
 
