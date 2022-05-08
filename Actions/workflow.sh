@@ -38,7 +38,7 @@ TOBEEXECUTED="pwd"
 DOCKER_RUN
 
 TOBEEXECUTED="bash RUNNER.sh"
-#DOCKER_RUN
+DOCKER_RUN
 
 #
 # docker run --rm --name nvcc_container --volume ${PWD}:/home --workdir /home -i nvcc_image bash GET_NVCC.sh
