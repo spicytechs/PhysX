@@ -29,7 +29,7 @@ DOCKER_IMAGES()
 
 DOCKER_CP() 
 {
-  docker cp ./physx ${CONTAINER_NAME}:/home/
+  docker cp ${DVOLUME}/physx ${CONTAINER_NAME}:/home/
 }
 
 
@@ -73,17 +73,17 @@ DOCKER_LOGIN
 DOCKER_BUILD 
 
 
-echo "LS"
+echo "LS..."
+
+DOCKER_CP 
+
 TOBEEXECUTED="ls -la"
 DOCKER_RUN
 
-
 TOBEEXECUTED="pwd"
 DOCKER_RUN
-echo "LS"
+echo "LS!!"
 
-
-#DOCKER_CP 
 
 TOBEEXECUTED="bash Actions/RUNNER.sh"
 #DOCKER_RUN
