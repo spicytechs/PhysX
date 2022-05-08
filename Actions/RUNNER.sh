@@ -30,6 +30,8 @@ pwd
 cd $ROOT
 pwd
 
+cd /home/physx
+ls 
 
 install/linux/PhysX/*
 
