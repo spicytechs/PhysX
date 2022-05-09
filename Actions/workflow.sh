@@ -70,7 +70,8 @@ DOCKER_COPY_TO_WORDIR()
   echo "[DOCKER_COPY] ..."
 
   DOCKER_WORDIR=/DUMMY
-
+  
+  echo "${TOBECOPIED} -> ${DOCKER_WORDIR}"
   docker cp \
   ${TOBECOPIED} \
   ${CONTAINER_NAME}:${DOCKER_WORDIR}
