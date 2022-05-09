@@ -27,7 +27,10 @@ function CL_SETUP
 
 function COMPILATION
 {
+  Write-Host "[COMPILATION] ... " #-NoNewline
+  Set-Location 
 
+  Write-Host "[COMPILATION] OK!"
 }
 
 CL_SETUP
