@@ -14,25 +14,21 @@ INIT
 ls
 pwd
 
-ROOT=${PWD}
+ls -la physx/* 
+ls -la physx/compiler/linux-release/*
 
 cd physx 
-ls
-bash generate_projects.sh linux 
-cd compiler/linux-release
-ls
+#ls
+#bash generate_projects.sh linux 
+#cd compiler/linux-release
+#ls
 
-make -j install  
+#make -j install  
+#ls
 
-ls
+#cd /home/physx
+#ls 
 
-pwd
-cd $ROOT
-pwd
-
-cd /home/physx
-ls 
-
-ls install/linux/PhysX/*
+#ls physx/install/linux/PhysX/*
 
 ## 
