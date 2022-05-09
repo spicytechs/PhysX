@@ -57,9 +57,15 @@ DOCKER_EXEC()
   echo "[$1] Done!"
 }
 
-DOCKER_COPY()
+DOCKER_COPY_TO_WORDIR()
 {
+  echo "[DOCKER_COPY] ..."
 
+  DOCKER_WORDIR=/DUMMY
+
+  docker cp \
+  /Users/poderozita/z2022_1/REPOSITORY/NVCC/cuda_nvcc-linux-x86_64-11.5.50-archive \
+  ${CONTAINER_NAME}:${DOCKER_WORDIR}
 }
 
 
