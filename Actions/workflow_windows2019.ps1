@@ -29,16 +29,19 @@ function COMPILATION
 {
   Write-Host "[COMPILATION] ... " #-NoNewline
   
-  Get-Location 
+  #Get-Location 
+  ls 
   pwd
   
-  Get-ChildItem 
+  
+  #Get-ChildItem 
   
   Set-Location -Path physx 
-  .\generate_projects.bat v16win64 
+  .\generate_projects.bat vc16win64 
   
   
-  Get-ChildItem install 
+  #Get-ChildItem install 
+  ls install 
 
   Write-Host "[COMPILATION] OK!"
 }
