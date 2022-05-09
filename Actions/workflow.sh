@@ -1,6 +1,8 @@
 
 DOCKER_PUSH() 
 {
+  echo "[DOCKER_PUSH] ..."
+
   ## Go To: 
   ##       https://hub.docker.com/repository/docker/${DUSERNAME}/${DREPOSITORY}
   ## 
@@ -9,11 +11,14 @@ DOCKER_PUSH()
 
 DOCKER_LOGIN() 
 {
+  echo "[DOCKER_LOGIN] ..."
   docker login -u ${DUSERNAME} -p ${DPASSWORD}
 }
 
 DOCKER_BUILD() 
 {
+  echo "[DOCKER_BUILD] ..."
+  
   DOCKERFILE=Dockerfile.ci
   
   docker build . \
@@ -25,6 +30,8 @@ DOCKER_BUILD()
 
 DOCKER_RUN_DETACHED()
 {
+  echo "[DOCKER_RUN_DETACHED] ..."
+
   DOCKER_WORDIR=/DUMMY
   
   CONTAINER_ID=$(
@@ -43,14 +50,23 @@ DOCKER_RUN_DETACHED()
 
 DOCKER_EXEC()
 {
+  echo "[DOCKER_EXEC] ..."
+
   echo "[$1] Runnnig ..."
   docker exec ${CONTAINER_NAME} $1
   echo "[$1] Done!"
 }
 
+DOCKER_COPY()
+{
+
+}
+
 
 DOCKER_STOP() 
 { 
+  echo "[DOCKER_STOP] ..."
+
   docker stop ${CONTAINER_NAME}
 }
 
@@ -63,11 +79,6 @@ DREPOSITORY=$3    # DOCKER_HUB_REPOSITORY
 ##
 DVOLUME=$4        # github.workspace   
 
-## 
-echo "I am here:'${PWD}' "
-ls ${DVOLUME}
-echo "Repository is:'${DVOLUME}' "
-
 ## Docker ... 
 CONTAINER_NAME=physx_container
 IMAGE_NAME=${DUSERNAME}/${DREPOSITORY}:$(date +%s)
@@ -76,10 +87,10 @@ DOCKER_LOGIN ##
 DOCKER_BUILD ##
 DOCKER_RUN_DETACHED ## 
 
-TOBEEXECUTED="ls -la"
+TOBEEXECUTED="pwd"
 DOCKER_EXEC $TOBEEXECUTED
 
-TOBEEXECUTED="pwd"
+TOBEEXECUTED="ls -la"
 DOCKER_EXEC $TOBEEXECUTED
 
 TOBEEXECUTED="bash Actions/RUNNER.sh"
