@@ -13,8 +13,8 @@ DOCKER_PUSH()
 
 DOCKER_LOGIN() 
 {
-  echo "[DOCKER_LOGIN] ..."
   docker login -u ${DUSERNAME} -p ${DPASSWORD}
+  echo "[DOCKER_LOGIN] DONE!"
 }
 
 DOCKER_BUILD() 
@@ -82,9 +82,9 @@ DOCKER_COPY_TO_WORDIR()
 
 DOCKER_STOP() 
 { 
-  echo "[DOCKER_STOP]" 
-  X=${docker stop ${CONTAINER_NAME}} 
-  echo "[DOCKER_STOP] DONE!" $X
+  #echo "[DOCKER_STOP]" 
+  docker stop ${CONTAINER_NAME}
+  echo "[DOCKER_STOP] DONE!"
 }
 
 
@@ -118,7 +118,7 @@ TOBEEXECUTED="ls -la"
 DOCKER_EXEC $TOBEEXECUTED
 
 
-TOBEEXECUTED="physx"
+TOBECOPIED="physx"
 DOCKER_COPY_TO_WORDIR
 
 TOBEEXECUTED="ls -la"
