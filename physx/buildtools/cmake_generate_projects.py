@@ -156,7 +156,8 @@ class CMakePreset:
         elif self.compiler == 'vc15':
             outString = outString + '-G \"Visual Studio 15 2017\"'
         elif self.compiler == 'vc16':
-            outString = outString + '-G \"Visual Studio 16 2019\"'
+            #outString = outString + '-G \"Visual Studio 16 2019\"'
+            outString = outString + '-G \"Ninja\"'
         elif self.compiler == 'xcode':
             outString = outString + '-G Xcode'
         elif self.targetPlatform == 'android':
@@ -172,7 +173,7 @@ class CMakePreset:
             outString = outString + ' -DPX_OUTPUT_ARCH=x86'
             return outString
         elif self.targetPlatform == 'win64':
-            outString = outString + ' -Ax64'
+#            outString = outString + ' -Ax64'
             outString = outString + ' -DTARGET_BUILD_PLATFORM=windows'
             outString = outString + ' -DPX_OUTPUT_ARCH=x86'
             return outString
