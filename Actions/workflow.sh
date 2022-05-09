@@ -115,7 +115,7 @@ DOCKER_EXEC
 TOBECOPIED="physx"
 DOCKER_COPY_TO_WORDIR
 
-TOBEEXECUTED="ls -la /DUMMY/physx/*"
+TOBEEXECUTED="ls -la /DUMMY/physx"
 DOCKER_EXEC
 
 ## 
@@ -127,9 +127,9 @@ DOCKER_STOP ##
 #DOCKER_PUSH ## 
 
 
-##
-## docker run --rm --name nvcc_container --volume ${PWD}:/home --workdir /home -i nvcc_image bash GET_NVCC.sh
-##
+## USEFUL ## 
+
+# docker run --rm --name nvcc_container --volume ${PWD}:/home --workdir /home -i nvcc_image bash GET_NVCC.sh
 
 DOCKER_IMAGES()
 {
@@ -137,32 +137,12 @@ DOCKER_IMAGES()
   echo "IMAGE_ID:", $IMAGE_ID    
 }
 
-
-DOCKER_CP() 
-{
-  CONTAINER_ID=$(docker create $IMAGE_NAME)
-  docker cp ${DVOLUME}/LICENSE.md ${CONTAINER_ID}:/home
-  docker rm -v $CONTAINER_ID  §§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
-}
-
-
 DOCKER_RUN_VOLUME()
 {
   docker run \
     --rm \
     --name ${CONTAINER_NAME} \
     --volume ${DVOLUME}:/home \
-    --workdir /home \
-    -i ${IMAGE_NAME} \
-    ${TOBEEXECUTED}
-}
-
-
-DOCKER_RUN()
-{
-  docker run \
-    --rm \
-    --name ${CONTAINER_NAME} \
     --workdir /home \
     -i ${IMAGE_NAME} \
     ${TOBEEXECUTED}
