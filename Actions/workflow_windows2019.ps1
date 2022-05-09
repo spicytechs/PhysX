@@ -47,9 +47,11 @@ function COMPILATION
   
   cd ..
   cd .. 
+
+  ls install\vc15win64\PhysX 
   
-  #Get-ChildItem install 
-  ls install 
+  tar -cvf PhysX.tar install\vc15win64\PhysX
+  
 
   Write-Host "[COMPILATION] OK!"
 }
