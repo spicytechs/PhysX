@@ -7,6 +7,8 @@ DOCKER_PUSH()
   ##       https://hub.docker.com/repository/docker/${DUSERNAME}/${DREPOSITORY}
   ## 
   docker push ${IMAGE_NAME}   
+
+  echo "[DOCKER_PUSH] DONE!"
 }
 
 DOCKER_LOGIN() 
@@ -25,6 +27,8 @@ DOCKER_BUILD()
     --file ${DOCKERFILE} \
     --tag ${IMAGE_NAME}  \
     > /dev/null 
+
+  echo "[DOCKER_BUILD] DONE!"
 }
 
 
@@ -45,6 +49,7 @@ DOCKER_RUN_DETACHED()
   )
   
   docker ps -a
+  echo "[DOCKER_RUN_DETACHED] DONE!"  
 }
 
 
@@ -55,6 +60,8 @@ DOCKER_EXEC()
   echo "[$1] Runnnig ..."
   docker exec ${CONTAINER_NAME} $1
   echo "[$1] Done!"
+  
+  echo "[DOCKER_EXEC] DONE!"  
 }
 
 
@@ -67,13 +74,16 @@ DOCKER_COPY_TO_WORDIR()
   docker cp \
   ${TOBECOPIED} \
   ${CONTAINER_NAME}:${DOCKER_WORDIR}
+  
+  echo "[DOCKER_COPY] DONE!" 
 }
 
 
 DOCKER_STOP() 
 { 
   echo "[DOCKER_STOP]" 
-  ${docker stop ${CONTAINER_NAME}} 
+  X=${docker stop ${CONTAINER_NAME}} 
+  echo "[DOCKER_STOP] DONE!" $X
 }
 
 
@@ -99,13 +109,22 @@ DOCKER_EXEC $TOBEEXECUTED
 TOBEEXECUTED="ls -la"
 DOCKER_EXEC $TOBEEXECUTED
 
+
 TOBECOPIED="LICENSE.md"
 DOCKER_COPY_TO_WORDIR
 
 TOBEEXECUTED="ls -la"
 DOCKER_EXEC $TOBEEXECUTED
 
-TOBEEXECUTED="bash Actions/RUNNER.sh"
+
+TOBEEXECUTED="physx"
+DOCKER_EXEC $TOBEEXECUTED
+
+TOBEEXECUTED="ls -la"
+DOCKER_EXEC $TOBEEXECUTED
+
+
+#TOBEEXECUTED="bash Actions/RUNNER.sh"
 #DOCKER_EXEC $TOBEEXECUTED
 
 DOCKER_STOP ## 
