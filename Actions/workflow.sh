@@ -57,9 +57,9 @@ DOCKER_EXEC()
 {
   echo "[DOCKER_EXEC] ..."
 
-  echo "[$1] Runnnig ..."
-  docker exec ${CONTAINER_NAME} $1
-  echo "[$1] Done!"
+  echo "[${TOBEEXECUTED}] Runnnig ..."
+  docker exec ${CONTAINER_NAME} ${TOBEEXECUTED}
+  echo "[${TOBEEXECUTED}] Done!"
   
   echo "[DOCKER_EXEC] DONE!"  
 }
@@ -109,19 +109,20 @@ TOBECOPIED="Actions/RUNNER.sh"
 DOCKER_COPY_TO_WORDIR
 
 TOBEEXECUTED="ls -la"
-DOCKER_EXEC $TOBEEXECUTED
+DOCKER_EXEC
 
 ##
 TOBECOPIED="physx"
 DOCKER_COPY_TO_WORDIR
 
 TOBEEXECUTED="ls -la /DUMMY/physx/*"
-DOCKER_EXEC $TOBEEXECUTED
+DOCKER_EXEC
 
+## 
+TOBEEXECUTED="bash RUNNER.sh"
+DOCKER_EXEC
 
-#TOBEEXECUTED="bash Actions/RUNNER.sh"
-#DOCKER_EXEC $TOBEEXECUTED
-
+##
 DOCKER_STOP ## 
 #DOCKER_PUSH ## 
 
