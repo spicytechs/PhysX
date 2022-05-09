@@ -133,7 +133,7 @@ DOCKER_EXEC
 
 ##
 DOCKER_STOP ## 
-#DOCKER_PUSH ## 
+DOCKER_PUSH ## 
 
 
 ## USEFUL ## 
