@@ -37,8 +37,16 @@ function COMPILATION
   #Get-ChildItem 
   
   Set-Location -Path physx 
+  
   .\generate_projects.bat vc16win64 
   
+  Set-Location -Path compiler\vc16win64 
+  
+  
+  ninja.exe -j4 install 
+  
+  cd ..
+  cd .. 
   
   #Get-ChildItem install 
   ls install 
