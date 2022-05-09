@@ -18,6 +18,8 @@ bash generate_projects.sh linux
 
 ls -la compiler/linux-release/*
 
+make -j -C compiler/linux-release/ install
+
 ls -la install/linux/PhysX/*
 
 
