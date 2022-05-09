@@ -19,7 +19,7 @@ DOCKER_BUILD()
 {
   echo "[DOCKER_BUILD] ..."
   
-  DOCKERFILE=Dockerfile.ci
+  DOCKERFILE="Actions/Dockerfile.ci"
   
   docker build . \
     --file ${DOCKERFILE} \
@@ -64,7 +64,7 @@ DOCKER_COPY_TO_WORDIR()
   DOCKER_WORDIR=/DUMMY
 
   docker cp \
-  /Users/poderozita/z2022_1/REPOSITORY/NVCC/cuda_nvcc-linux-x86_64-11.5.50-archive \
+  ${TOBECOPIED} \
   ${CONTAINER_NAME}:${DOCKER_WORDIR}
 }
 
