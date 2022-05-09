@@ -6,7 +6,10 @@ DOCKER_PUSH()
   ## Go To: 
   ##       https://hub.docker.com/repository/docker/${DUSERNAME}/${DREPOSITORY}
   ## 
-  docker push ${IMAGE_NAME}   
+#  docker push ${IMAGE_NAME}   
+
+  docker commit ${CONTAINER_NAME} ${IMAGE_NAME2}
+  docker push ${IMAGE_NAME2}   
 
   echo "[DOCKER_PUSH] DONE!"
 }
@@ -98,7 +101,8 @@ DVOLUME=$4        # github.workspace
 
 ## Docker ... 
 CONTAINER_NAME=physx_container
-IMAGE_NAME=${DUSERNAME}/${DREPOSITORY}:$(date +%s)
+IMAGE_NAME=${DUSERNAME}/${DREPOSITORY}
+IMAGE_NAME2=${DUSERNAME}/${DREPOSITORY}:$(date +%s)
 
 DOCKER_LOGIN ##
 DOCKER_BUILD ##
@@ -129,7 +133,7 @@ DOCKER_EXEC
 
 ## 
 TOBEEXECUTED="bash RUNNER.sh"
-DOCKER_EXEC
+#DOCKER_EXEC
 
 ##
 DOCKER_STOP ## 
