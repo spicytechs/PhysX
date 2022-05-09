@@ -11,13 +11,17 @@ INIT()
 
 INIT
 
-ls
-pwd
+cd physx
+ls -la * 
 
-ls -la physx/* 
-ls -la physx/compiler/linux-release/*
+bash generate_projects.sh linux 
 
-cd physx 
+ls -la compiler/linux-release/*
+
+ls -la install/linux/PhysX/*
+
+
+#cd physx 
 #ls
 #bash generate_projects.sh linux 
 #cd compiler/linux-release
@@ -29,6 +33,5 @@ cd physx
 #cd /home/physx
 #ls 
 
-#ls physx/install/linux/PhysX/*
 
 ## 
