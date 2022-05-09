@@ -29,7 +29,7 @@ function COMPILATION
 {
   Write-Host "[COMPILATION] ... " #-NoNewline
   
-  Get-Location . 
+  Get-Location 
   pwd
   
   Get-ChildItem 
