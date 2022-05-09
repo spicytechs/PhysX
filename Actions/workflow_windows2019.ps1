@@ -52,7 +52,8 @@ function COMPILATION
   
   tar -cvf PhysX.tar install\vc15win64\PhysX
   
-
+  ls PhysX.tar
+  
   Write-Host "[COMPILATION] OK!"
 }
 
