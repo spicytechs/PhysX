@@ -26,6 +26,16 @@ jobs:
         DREPOSITORY: ${{ secrets.DOCKER_HUB_REPOSITORY }}  # 
 
       run: | 
-        cd Actions
-        bash workflow.sh $DPASSWORD $DUSERNAME $DREPOSITORY ${{ github.workspace }}
+        #cd Actions
+        echo "[WORFLOWS] I am here:'${PWD}' "
+        echo "[WORFLOWS] ls -la"
+        ls -la ${PWD}
+        echo "[WORFLOWS] "
+        
+        echo "[WORFLOWS] Repository is:'${{ github.workspace }}' "
+        echo "[WORFLOWS] ls -la "
+        ls -la ${{ github.workspace }} 
+        
+        bash Actions/workflow.sh $DPASSWORD $DUSERNAME $DREPOSITORY ${{ github.workspace }}
+        DVOLUME=${{ github.workspace }}
         
