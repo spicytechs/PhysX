@@ -1,4 +1,4 @@
-name: Docker CI
+name: UBUNTU2004
 
 on: [push, workflow_dispatch]
 
