@@ -28,7 +28,10 @@ function CL_SETUP
 function COMPILATION
 {
   Write-Host "[COMPILATION] ... " #-NoNewline
-  Set-Location 
+  #Set-Location . 
+  pwd
+  
+  Get-ChildItem 
 
   Write-Host "[COMPILATION] OK!"
 }
