@@ -1,0 +1,23 @@
+name: WIN19
+
+on: [push, workflow_dispatch]
+  
+jobs:
+
+  build:
+  
+    runs-on: windows-2019
+
+    steps:
+
+      - uses: actions/checkout@v3
+          
+      - name: clexe 
+        shell: |
+          powershell 
+          
+        run: |
+          
+          .\Actions\workflow_windows2019.ps1
+          
+          
