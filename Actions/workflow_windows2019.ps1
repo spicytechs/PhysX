@@ -28,10 +28,17 @@ function CL_SETUP
 function COMPILATION
 {
   Write-Host "[COMPILATION] ... " #-NoNewline
-  #Set-Location . 
+  
+  Get-Location . 
   pwd
   
   Get-ChildItem 
+  
+  Set-Location -Path physx 
+  .\generate_projects.bat v16win64 
+  
+  
+  Get-ChildItem install 
 
   Write-Host "[COMPILATION] OK!"
 }
