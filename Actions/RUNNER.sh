@@ -18,6 +18,10 @@ ls -la compiler/linux-release
 
 make -j -C compiler/linux-release/ install
 
+## HEADERS AND LIBRARIES 
 ls -la install/linux/PhysX
 
-## 
+## EXAMPLES 
+ls -la bin/linux.clang/release
+
+##
