@@ -16,6 +16,8 @@ RUN apt-get --yes -qq install libglu1-mesa-dev
 RUN apt-get --yes -qq install libxdamage1
 RUN apt-get --yes -qq install libxt6 
 RUN apt-get --yes -qq install libxxf86vm-dev -y
+RUN apt-get --yes -qq install libxmu6 -y
+RUN apt-get --yes -qq install freeglut3 -y
 
 #RUN apt-get --yes -qq install 
 RUN apt-get --yes -qq clean
