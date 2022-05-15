@@ -1,0 +1,41 @@
+name: UBUNTU2004
+
+on: [push, workflow_dispatch]
+
+jobs:
+
+  build:
+  
+    runs-on: ubuntu-20.04
+      
+    steps:
+    
+    - name: Dowloading repository ... 
+      uses: actions/checkout@v2
+      
+    
+    - name: Executing Docker ...  
+      if: success()
+
+      env:
+        ## SEE : 
+        ##      https://hub.docker.com/repository/docker/${DUSERNAME}/${DREPOSITORY}
+        ## 
+        DPASSWORD: ${{ secrets.DOCKER_HUB_TOKEN }}         # https://hub.docker.com/settings/security >> Access Tokens 
+        DUSERNAME: ${{ secrets.DOCKER_HUB_USERNAME }}      # 
+        DREPOSITORY: ${{ secrets.DOCKER_HUB_REPOSITORY }}  # 
+
+      run: | 
+        #cd Actions
+        echo "[WORFLOWS] I am here:'${PWD}' "
+        echo "[WORFLOWS] ls -la"
+        ls -la ${PWD}
+        echo "[WORFLOWS] "
+        
+        echo "[WORFLOWS] Repository is:'${{ github.workspace }}' "
+        echo "[WORFLOWS] ls -la "
+        ls -la ${{ github.workspace }} 
+        
+        bash Actions/workflow_ubuntu2004.sh $DPASSWORD $DUSERNAME $DREPOSITORY ${{ github.workspace }}
+        DVOLUME=${{ github.workspace }}
+        
