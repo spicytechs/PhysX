@@ -23,7 +23,7 @@ jobs:
         ## 
         DPASSWORD: ${{ secrets.DOCKER_HUB_TOKEN }}         # https://hub.docker.com/settings/security >> Access Tokens 
         DUSERNAME: ${{ secrets.DOCKER_HUB_USERNAME }}      # 
-        DREPOSITORY: ${{ secrets.DOCKER_HUB_REPOSITORY }}  # 
+        DREPOSITORY: ${{ secrets.DOCKER_HUB_MYBINDER }}  # 
 
       run: | 
         #cd Actions
