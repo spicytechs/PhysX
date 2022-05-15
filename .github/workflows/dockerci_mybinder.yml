@@ -1,4 +1,4 @@
-name: UBUNTU2004
+name: MYBINDER
 
 on: [push, workflow_dispatch]
 
