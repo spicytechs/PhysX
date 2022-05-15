@@ -36,6 +36,6 @@ jobs:
         echo "[WORFLOWS] ls -la "
         ls -la ${{ github.workspace }} 
         
-        bash Actions/workflow_ubuntu2004.sh $DPASSWORD $DUSERNAME $DREPOSITORY ${{ github.workspace }}
+        bash Actions/workflow_mybinder.sh $DPASSWORD $DUSERNAME $DREPOSITORY ${{ github.workspace }}
         DVOLUME=${{ github.workspace }}
         
