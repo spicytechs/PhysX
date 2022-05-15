@@ -2,6 +2,7 @@
 
 ![example workflow](https://github.com/spicytechs/PhysX/actions/workflows/dockerci_ubuntu2004.yml/badge.svg)
 ![example workflow](https://github.com/spicytechs/PhysX/actions/workflows/dockerci_windows2019.yml/badge.svg)
+![example workflow](https://github.com/spicytechs/PhysX/actions/workflows/dockerci_mybinder.yml/badge.svg)
 
 
 
