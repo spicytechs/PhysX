@@ -5,8 +5,7 @@ DOCKER_PUSH()
 
   ## Go To: 
   ##       https://hub.docker.com/repository/docker/${DUSERNAME}/${DREPOSITORY}
-  ## 
-#  docker push ${IMAGE_NAME}   
+  ##   
 
   docker commit ${CONTAINER_NAME} ${IMAGE_NAME2}
   docker push ${IMAGE_NAME2}   
@@ -38,8 +37,6 @@ DOCKER_BUILD()
 DOCKER_RUN_DETACHED()
 {
   echo "[DOCKER_RUN_DETACHED] ..."
-
-  DOCKER_WORDIR=/DUMMY
   
   CONTAINER_ID=$(
      docker run \
@@ -71,8 +68,6 @@ DOCKER_EXEC()
 DOCKER_COPY_TO_WORDIR()
 {
   echo "[DOCKER_COPY] ..."
-
-  DOCKER_WORDIR=/DUMMY
   
   echo "${TOBECOPIED} -> ${DOCKER_WORDIR}"
   docker cp \
@@ -97,7 +92,8 @@ DUSERNAME=$2      # DOCKER_HUB_USERNAME
 DREPOSITORY=$3    # DOCKER_HUB_REPOSITORY 
 
 ##
-DVOLUME=$4        # github.workspace   
+#DVOLUME=$4        # github.workspace   
+DOCKER_WORDIR=/home/jovyan/work 
 
 ## Docker ... 
 CONTAINER_NAME=mybinder_container
@@ -132,8 +128,8 @@ TOBEEXECUTED="ls -la"
 DOCKER_EXEC
 
 ## 
-TOBEEXECUTED="bash RUNNER.sh"
-DOCKER_EXEC
+#TOBEEXECUTED="bash RUNNER.sh"
+#DOCKER_EXEC
 
 ##
 DOCKER_PUSH ## 
