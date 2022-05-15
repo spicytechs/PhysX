@@ -12,9 +12,17 @@ RUN apt-get --yes -qq update
 
 RUN apt-get --yes -qq install build-essential
 RUN apt-get --yes -qq install cmake
-RUN apt-get --yes -qq install cmake-curses-gui ## ccmake
+#RUN apt-get --yes -qq install cmake-curses-gui ## ccmake
 RUN apt-get --yes -qq install clang-tools-9
 RUN apt-get --yes -qq install vim  
+
+RUN apt-get --yes -qq install libx11-dev
+RUN apt-get --yes -qq install libglu1-mesa-dev
+RUN apt-get --yes -qq install libxdamage1
+RUN apt-get --yes -qq install libxt6 
+RUN apt-get --yes -qq install libxxf86vm-dev -y
+RUN apt-get --yes -qq install libxmu6 -y
+RUN apt-get --yes -qq install freeglut3 -y
 
 ## 
 FROM notebook_setup AS notebook_execute 
