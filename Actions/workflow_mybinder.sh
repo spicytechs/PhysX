@@ -42,6 +42,8 @@ DOCKER_RUN_DETACHED()
      docker run \
         --detach \
         --rm \
+        --user root \
+        --env GRANT_SUDO=yes \
         --name ${CONTAINER_NAME} \
         --workdir ${DOCKER_WORDIR} \
         --interactive ${IMAGE_NAME} \
