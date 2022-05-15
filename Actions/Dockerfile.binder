@@ -17,11 +17,11 @@ RUN apt-get --yes -qq install clang-tools-9
 RUN apt-get --yes -qq install vim  
 
 ## 
-#FROM notebook_setup AS notebook_execute 
+FROM notebook_setup AS notebook_execute 
 ##ENV IPYNB_FILE="simplest.ipynb"
 ENV NB_USER="jovyan" 
 WORKDIR /home/jovyan/work 
 ##COPY ${IPYNB_FILE} /home/jovyan/work 
 RUN chown -R ${NB_USER} /home/jovyan/work
-USER ${NB_USER}
+#USER ${NB_USER}
 ##RUN jupyter nbconvert --execute --clear-output ${IPYNB_FILE} 
