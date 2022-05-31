@@ -17,6 +17,5 @@ jobs:
         run: |
           cd /Users/runner/work/PhysX/PhysX
           ls -la 
-          pwd 
-          ./Actions/RUNNER.sh
+          bash ./Actions/RUNNER.sh
           
