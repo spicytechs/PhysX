@@ -15,6 +15,7 @@ jobs:
       - name: runner... 
           
         run: |
+          cd /Users/runner/work/PhysX/PhysX
           ls -la 
           pwd 
           #./Actions/RUNNER.sh
