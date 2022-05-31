@@ -11,9 +11,9 @@
 
 PATCHES()
 {
-  Actions/BigSur/Patchs/linux.xml physx/buildtools/presets/public/linux.xml
-  Actions/BigSur/Patchs/CMakeLists.txt physx/source/compiler/cmake/mac/CMakeLists.txt 
-  Actions/BigSur/Patchs/cmake_generate_projects.py physx/buildtools/cmake_generate_projects.py
+  cp Actions/BigSur/Patchs/linux.xml physx/buildtools/presets/public/linux.xml
+  cp Actions/BigSur/Patchs/CMakeLists.txt physx/source/compiler/cmake/mac/CMakeLists.txt 
+  cp Actions/BigSur/Patchs/cmake_generate_projects.py physx/buildtools/cmake_generate_projects.py
 }
 
 
