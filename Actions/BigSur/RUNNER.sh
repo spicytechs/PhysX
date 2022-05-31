@@ -1,13 +1,3 @@
-## Patchs
-## 1. True ->False
-## physx/buildtools/presets/public/linux.xml
-
-## 2. clang++-9 -> clang++
-## physx/buildtools/cmake_generate_projects.py
-
-## 3. -Wno-alloca -Wno-anon-enum-enum-conversion 
-## physx/source/compiler/cmake/mac/CMakeLists.txt
-
 
 PATCHES()
 {
