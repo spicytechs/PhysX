@@ -9,6 +9,14 @@
 ## physx/source/compiler/cmake/mac/CMakeLists.txt
 
 
+PATCHES()
+{
+  Actions/BigSur/Patchs/linux.xml physx/buildtools/presets/public/linux.xml
+  Actions/BigSur/Patchs/CMakeLists.txt physx/source/compiler/cmake/mac/CMakeLists.txt 
+  Actions/BigSur/Patchs/cmake_generate_projects.py physx/buildtools/cmake_generate_projects.py
+}
+
+
 CHECK()
 {
   ls 
@@ -20,26 +28,15 @@ CHECK()
   clang++ --version   ## Apple clang version 12.0.0 (clang-1200.0.32.29)
 } 
 
-export PATH="$PATH:/Users/poderozita/Downloads/DOCKERs/PhysX/Cmake3232/CMake.app/Contents/bin"
 
+PATCHES
 CHECK
-#exit 
 
 cd physx
-
 bash generate_projects.sh linux 
 
 ls -la compiler/linux-release
-
-#make -C compiler/linux-release/ 
-
-#exit
 make -j -C compiler/linux-release/ install
 
-## HEADERS AND LIBRARIES 
 ls -la install/linux/PhysX
-
-## EXAMPLES 
 ls -la bin/mac.x86_64/release/
-
-##
