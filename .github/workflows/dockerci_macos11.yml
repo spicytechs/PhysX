@@ -15,6 +15,7 @@ jobs:
       - name: runner... 
           
         run: |
-          
-          ./Actions/RUNNER.sh
+          ls -la 
+          pwd 
+          #./Actions/RUNNER.sh
           
