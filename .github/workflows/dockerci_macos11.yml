@@ -17,5 +17,5 @@ jobs:
         run: |
           cd /Users/runner/work/PhysX/PhysX
           ls -la 
-          bash ./Actions/RUNNER.sh
+          bash ./Actions/BigSur/RUNNER.sh
           
