@@ -31,6 +31,10 @@ make -j -C compiler/linux-release/ install
 ls -la install/linux/PhysX
 ls -la bin/mac.x86_64/release/
 
+cd ..
+tar -cvf PhysX.tar physx/install/linux/PhysX physx/bin/mac.x86_64/release/
+
+
 ##
 ## https://github.com/actions/virtual-environments/blob/main/images/macos/macos-10.15-Readme.md
 ##
